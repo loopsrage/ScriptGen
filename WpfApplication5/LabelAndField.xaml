@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="VSG.LabelAndField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSG"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="200">
+    <Grid x:Name="Fields">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Name="textLabel" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding Path=DataName, Mode=TwoWay}" Margin="2,2,2,2"/>
+        <TextBox Name="txtValue" LostFocus="txtValue_LostFocus" Text="{Binding Path=DataValue, Mode=TwoWay}" Grid.Column="1" Margin="2,2,2,2"/>
+        <ComboBox Grid.Column="2" Name="SelFunc" SelectionChanged="UpdateFNames" DropDownOpened="SelFunc_DropDownOpened" Margin="2,2,2,2"></ComboBox>
+    </Grid>
+</UserControl>
